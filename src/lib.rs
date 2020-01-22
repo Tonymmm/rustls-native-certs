@@ -4,9 +4,9 @@
 //! It consists of a single function [load_native_certs](fn.load_native_certs.html) which returns a
 //! `rustls::RootCertStore` pre-filled from the native certificate store.
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "android", target_os = "android"))]
 mod linux;
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "android", target_os = "android"))]
 use linux as platform;
 
 #[cfg(target_family = "windows")]
